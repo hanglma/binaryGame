@@ -2,7 +2,7 @@
   "name": "binarygame_web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://hanglma.github.io/binarygame",
+  "homepage": "https://hanglma.github.io/binaryGame/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
