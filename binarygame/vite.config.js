@@ -6,5 +6,5 @@ export default defineConfig({
   // other config options...
   build: {
     outDir: 'build' // Change this to your preferred output directory
-  }
+  },
 });

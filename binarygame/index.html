@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary to Decimal Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .circle {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            margin: 10px;
-            border-radius: 50%;
-            background-color: lightgray;
-        }
-        .circle.active {
-            background-color: green;
-        }
-        .slider-container {
-            display: flex;
-            align-items: center;
-        }
-        .slider {
-            width: 300px;
-            margin: 20px;
-        }
-        #decimal-value {
-            font-size: 2rem;
-            margin-left: 10px;
-        }
-        #check-answer {
-            padding: 10px 20px;
-            font-size: 1.5rem;
-        }
-        #result {
-            font-size: 2rem;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary to Decimal Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="binary-container"></div>
-    <div class="slider-container">
-        <input type="range" id="decimal-slider" class="slider" min="0" max="64" value="0">
-        <span id="decimal-value">0</span>
+  <div class="tabs-container">
+    <div class="tab active" data-tab="home">Home</div>
+    <div class="tab" data-tab="game1">Binary to Decimal</div>
+    <div class="tab" data-tab="game2">Decimal to Binary</div>
+  </div>
+
+  <div id="home" class="tab-content active">
+    <h2>Home</h2>
+    <p>Welcome to the Binary and Decimal Converter Game.</p>
+  </div>
+
+  <div id="game1" class="tab-content">
+    <h2>Binary to Decimal Game</h2>
+    <div id="app">
+      <svg id="binary-circles-svg" width="500" height="100"></svg>
+      <input type="range" id="decimal-slider" min="0" max="31">
+      <span id="slider-value">0</span>
+      <button id="check-binary-decimal-answer">Check Answer</button>
+      <p id="binary-decimal-feedback"></p>
     </div>
-    <button id="check-answer">Check Answer</button>
-    <p id="result"></p>
-    <script src="src/main.ts"></script>
+  </div>
+
+  <div id="game2" class="tab-content">
+    <h2>Decimal to Binary Game</h2>
+    <div id="decimal-to-binary-game">
+      <p id="decimal-question"></p>
+      <div id="binary-circles"></div>
+      <button id="check-answer-button">Check Answer</button>
+      <p id="decimal-binary-feedback"></p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
