@@ -4,48 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binary to Decimal Game</title>
-  <style>
-    .tab {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-right: 5px;
-      cursor: pointer;
-      background-color: #f1f1f1;
-    }
-
-    .tab.active {
-      background-color: #ccc;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 5px;
-      background-color: lightgrey;
-      line-height: 50px;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .circle.selected {
-      background-color: green;
-    }
-  </style>
-  <script type="module" crossorigin src="./assets/index-B01n7pfY.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Cz4zGhbH.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" crossorigin src="./assets/index-CtciA_qg.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-PaqAiUFs.css">
 </head>
 <body>
-  <div>
+  <div class="tabs-container">
     <div class="tab active" data-tab="home">Home</div>
     <div class="tab" data-tab="game1">Binary to Decimal</div>
     <div class="tab" data-tab="game2">Decimal to Binary</div>
@@ -53,18 +17,17 @@
 
   <div id="home" class="tab-content active">
     <h2>Home</h2>
-    <p>Welcome to the Binary to Decimal Converter Game.</p>
+    <p>Welcome to the Binary and Decimal Converter Game.</p>
   </div>
 
   <div id="game1" class="tab-content">
     <h2>Binary to Decimal Game</h2>
     <div id="app">
-      <svg id="binary-circles-svg" width="500" height="100">
-        <!-- Binary circles will be inserted here -->
-      </svg>
+      <svg id="binary-circles-svg" width="50vh" height="10vh"></svg>
+      <span id="slider-value">0</span>
       <input type="range" id="decimal-slider" min="0" max="31">
-      <span id="slider-value"></span>
       <button id="check-binary-decimal-answer">Check Answer</button>
+      <p id="binary-decimal-feedback"></p>
     </div>
   </div>
 
@@ -74,6 +37,7 @@
       <p id="decimal-question"></p>
       <div id="binary-circles"></div>
       <button id="check-answer-button">Check Answer</button>
+      <p id="decimal-binary-feedback"></p>
     </div>
   </div>
 
