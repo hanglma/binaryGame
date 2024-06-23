@@ -1,6 +1,11 @@
 // main.ts
 import './style.css';
 
+var decimalSlider = document.getElementById('decimal-slider') as HTMLInputElement;
+decimalSlider.step = "1";
+var sliderValueElement = document.getElementById('slider-value');
+sliderValueElement!.innerHTML = decimalSlider.value;
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize tab functionality
   const tabs = document.querySelectorAll('.tab');
@@ -24,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Global event listener for arrow keys to control slider
   document.addEventListener('keydown', (event) => {
-    const decimalSlider = document.getElementById('decimal-slider') as HTMLInputElement;
-    const sliderValueElement = document.getElementById('slider-value');
     if (decimalSlider && sliderValueElement) {
       if (event.key === 'ArrowLeft') {
         decimalSlider.stepDown();
@@ -40,6 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+decimalSlider.oninput = function() {
+  sliderValueElement!.innerHTML = decimalSlider.value;
+}
+
+
 
 function openTab(evt: Event, tabName: string) {
   const tabcontent = document.getElementsByClassName("tab-content") as HTMLCollectionOf<HTMLElement>;
@@ -143,7 +152,7 @@ function generateBinaryToDecimalQuestion() {
   const feedbackElement = document.getElementById('binary-decimal-feedback');
   if (binaryCirclesSvg && feedbackElement) {
     binaryCirclesSvg.innerHTML = '';
-    const binaryValueToConvert = (Math.floor(Math.random() * 32)).toString(2).padStart(5, '0');
+    binaryValueToConvert = (Math.floor(Math.random() * 32)).toString(2).padStart(5, '0');
     const svgNamespace = 'http://www.w3.org/2000/svg';
     const svgWidth = 60 * binaryValueToConvert.length; // Calculate the width based on the number of circles
     binaryCirclesSvg.setAttribute('width', svgWidth.toString());
@@ -166,7 +175,6 @@ function generateBinaryToDecimalQuestion() {
     }
   }
 }
-
 
 function checkBinaryToDecimalAnswer() {
   const decimalSlider = document.getElementById('decimal-slider') as HTMLInputElement;

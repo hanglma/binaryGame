@@ -7,64 +7,32 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+  font-size: 3vh;
 }
 
 .tabs-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 8vh;
+  /* background-color: grey; */
 }
 
 .tab {
-  padding: 10px 20px;
-  margin: 0 5px;
+  padding: 4vh 8vh;
+  margin: 0 2vh;
   cursor: pointer;
-  background-color: #f1f1f1;
+  background-color: grey;
+  border-radius: 2vh;
 }
 
 .tab.active {
-  background-color: #ccc;
+  background-color: #cccccc3b;
+  border-style: dotted;
 }
 
 .tab-content {
   display: none;
   text-align: center;
-}
-
-.tab-content.active {
-  display: block;
-}body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
-}
-
-.tabs-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.tab {
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-}
-
-.tab.active {
-  background-color: #ccc;
-}
-
-.tab-content {
-  display: none;
-  text-align: center;
-  width: 100%;
 }
 
 .tab-content.active {
@@ -72,13 +40,13 @@ body {
 }
 
 .circle {
-  width: 50px;
-  height: 50px;
+  width: 8vh;
+  height: 8vh;
   border-radius: 50%;
   display: inline-block;
-  margin: 5px;
+  margin: 2vh;
   background-color: lightgrey;
-  line-height: 50px;
+  line-height: 20vh;
   text-align: center;
   cursor: pointer;
 }
@@ -95,7 +63,7 @@ body {
 }
 
 /* #binary-circles-svg, #binary-circles {
-  margin: 20px 0;
+  margin: 20vh 0;
 } */
 
 #binary-circles-svg {
@@ -105,15 +73,15 @@ body {
 
 .circles-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 8vh;
 }
 
 input[type="range"] {
-  margin: 20px 0;
+  margin: 8vh 0;
 }
 
 #binary-decimal-feedback, #decimal-binary-feedback {
-  font-size: 1.2em;
+  font-size: 3vh;
   font-weight: bold;
 }
 
@@ -125,19 +93,26 @@ input[type="range"] {
   color: red;
 }
 
-
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 5px;
-  background-color: lightgrey;
-  line-height: 50px;
-  text-align: center;
+button {
+  padding: 2vh 4vh;
+  background-color: #444;
+  color: white;
+  border-color: purple;
+  border-style: dotted;
   cursor: pointer;
+  font-size: 2vh;
+  border-radius: 2vh;
 }
 
-.circle.selected {
-  background-color: green;
+#slider-value {
+  font-size: 5vh;
+  font-weight: bold;
+  padding: 2vh 0vh 2vh 0vh;
+}
+
+#decimal-slider {
+  padding: 2vh 0vh 2vh 0vh;
+  margin: 0px 0px 0px 0px;
+  height: 4vh;
+  width: 25vh;
 }
